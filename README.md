@@ -27,7 +27,7 @@ bytes_num * rep_cnt should be less than PAGE_SIZE
 
 to read and write use mmap and /sys/kernel/debug/spi.control
 example:
-
+```c
 #include <stdio.h>
 #include <string.h>
 #include <fcntl.h>
@@ -68,3 +68,4 @@ int main(void) {
 
 	return 0;
 }
+```
