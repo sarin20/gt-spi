@@ -1,17 +1,23 @@
 # gt-spi
-
+```
 *******READ THIS FIRST********
 THIS SOFTWARE WORKS AT KERNEL LEVEL AND NOT TESTED WELL
 YOU USE IT WITH YOUR FULL RESPONSIBILITY
 *****************************
-
+```
 to build this module you need to patch your kernel as described here: https://github.com/blackswift/openwrt
 then add package in menuconfig then build like any other kernek module:
+```sh
 openwrt# make package/kernel/gt-spi/compile V=99
-
-echo "<clk mosi miso cs frequency> [bytes_num rep_cnt]" > /sys/kernel/debug/spi.control
+```
+To use:
+```sh
+# echo "<clk mosi miso cs frequency> [bytes_num rep_cnt]" > /sys/kernel/debug/spi.control
+```
 example:
-echo "21 22 24 19 1000 3 10" > /sys/kernel/debug/spi.control 
+```sh
+# echo "21 22 24 19 1000 3 10" > /sys/kernel/debug/spi.control 
+```
 starts SPI conversation at
 21 - SCK
 22 - MOSI
